@@ -6,7 +6,6 @@ class PowerOfTwoMaxHeap:
   def insert(self, node_value):
     if(len(self.heap_array) == 1):
       self.heap_array.append(node_value)
-      print(self.heap_array, 'INIATIALLY')
       return self.heap_array[1:]
     else:
       self.heap_array.append(node_value)
