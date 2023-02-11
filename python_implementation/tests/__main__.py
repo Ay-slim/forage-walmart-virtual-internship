@@ -4,6 +4,7 @@ from utils.calculate_parent_index import calculate_parent_index
 from utils.heapify_up import heapify_up
 from utils.calculate_child_indices import calculate_child_indices
 from utils.heapify_down import heapify_down
+from utils.generate_longest_ancestry import generate_longest_ancestry
 class TestUtils(unittest.TestCase):
   def test_swap_util(self):
     sampleArray = ['a', 'b', 'c', 'd', 'e']
@@ -28,5 +29,9 @@ class TestUtils(unittest.TestCase):
     heapify_down_test_array = [None, 1000, 500, 800, 700, 900, 850, 650, 620, 630, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 610, 615, 612]
     down_heapified_array = heapify_down(heapify_down_test_array, 2, 2)
     self.assertTrue(down_heapified_array == [None, 1000, 850, 800, 700, 900, 615, 650, 620, 630, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 610, 500, 612])
+  def longest_ancestry_test(self):
+    squared_ancestry = generate_longest_ancestry(2, 18)
+    unary_ancestry = generate_longest_ancestry(1,19)
+    self.assertTrue(squared_ancestry==[4] and unary_ancestry==[2,4,9])
 if __name__ == '__main__':
     unittest.main(verbosity=2)
