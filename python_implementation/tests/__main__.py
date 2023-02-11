@@ -3,6 +3,7 @@ from utils.swap import swap
 from utils.calculate_parent_index import calculate_parent_index
 from utils.heapify_up import heapify_up
 from utils.calculate_child_indices import calculate_child_indices
+from utils.heapify_down import heapify_down
 class TestUtils(unittest.TestCase):
   def test_swap_util(self):
     sampleArray = ['a', 'b', 'c', 'd', 'e']
@@ -23,5 +24,9 @@ class TestUtils(unittest.TestCase):
     child_indices_power2 = calculate_child_indices(3, 2, 13)
     child_indices_power3 = calculate_child_indices(2, 3, 18)
     self.assertTrue(child_indices_power2 == [10, 11, 12] and child_indices_power3 == [10, 11, 12, 13, 14, 15, 16, 17])
+  def test_heapify_down(self):
+    heapify_down_test_array = [None, 1000, 500, 800, 700, 900, 850, 650, 620, 630, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 610, 615, 612]
+    down_heapified_array = heapify_down(heapify_down_test_array, 2, 2)
+    self.assertTrue(down_heapified_array == [None, 1000, 850, 800, 700, 900, 615, 650, 620, 630, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 610, 500, 612])
 if __name__ == '__main__':
     unittest.main(verbosity=2)
