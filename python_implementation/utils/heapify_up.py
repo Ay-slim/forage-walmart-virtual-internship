@@ -1,6 +1,6 @@
 from utils.calculate_parent_index import calculate_parent_index
 from utils.swap import swap
-def heapify(heap_array, current_child_index, child_value_index, spawn_exponent):
+def heapify_up(heap_array, current_child_index, child_value_index, spawn_exponent):
   """
   Recursively goes up the heap to ensure that the max heap requirement is satisfied
   - Specifiying child_value_index separately from current_child_index because we may not have to swap on every check
@@ -13,4 +13,4 @@ def heapify(heap_array, current_child_index, child_value_index, spawn_exponent):
   if child_value > heap_array[parent_index]:
     heap_array = swap(heap_array, child_value_index, parent_index)
     child_value_index = parent_index
-  return heapify(heap_array, parent_index, child_value_index, spawn_exponent)
+  return heapify_up(heap_array, parent_index, child_value_index, spawn_exponent)
