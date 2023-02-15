@@ -3,7 +3,7 @@ from utils.max_child import max_child_value_and_index
 from utils.swap import swap
 from utils.heapify_down import heapify_down
 
-def fill_node_holes(heap_array, spawn_exponent, longest_ancestry, generation=0, parent_index=1):
+def fill_node_holes(heap_array, spawn_exponent, longest_ancestry, generation=0, parent_index=0):
   if generation == len(longest_ancestry):
     heap_array.pop(longest_ancestry[generation-1])
     return heap_array
