@@ -4,22 +4,22 @@ from utils.generate_longest_ancestry import generate_longest_ancestry
 class PowerOfTwoMaxHeap:
   def __init__(self, spawn_exponent):
     self.spawn_exponent = spawn_exponent
-    self.heap_array = [None]
+    self.heap_array = []
   def insert(self, node_value):
-    if(len(self.heap_array) == 1):
+    if(len(self.heap_array) == 0):
       self.heap_array.append(node_value)
-      return self.heap_array[1:]
+      return self.heap_array
     else:
       self.heap_array.append(node_value)
       new_node_index = len(self.heap_array) - 1
       heapified_new_heap = heapify_up(self.heap_array, new_node_index, node_value, self.spawn_exponent)
       self.heap_array = heapified_new_heap
-      return heapified_new_heap[1:]
+      return heapified_new_heap
   def pop_max(self):
-    if(len(self.heap_array)==2):
+    if(len(self.heap_array)==1):
       return self.heap_array.pop(1)
     else:
-      max_element_index = self.heap_array[1]
+      max_element_index = self.heap_array[0]
       longest_ancestry = generate_longest_ancestry(self.spawn_exponent, self.heap_array)
       self.heap_array = fill_node_holes(self.heap_array, self.spawn_exponent, longest_ancestry)
       return max_element_index
