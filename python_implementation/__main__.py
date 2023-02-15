@@ -12,7 +12,7 @@ class PowerOfTwoMaxHeap:
     else:
       self.heap_array.append(node_value)
       new_node_index = len(self.heap_array) - 1
-      heapified_new_heap = heapify_up(self.heap_array, new_node_index, new_node_index, self.spawn_exponent)
+      heapified_new_heap = heapify_up(self.heap_array, new_node_index, node_value, self.spawn_exponent)
       self.heap_array = heapified_new_heap
       return heapified_new_heap[1:]
   def pop_max(self):
