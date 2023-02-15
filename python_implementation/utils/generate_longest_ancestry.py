@@ -5,7 +5,7 @@ def generate_longest_ancestry(spawn_exponent, heap_array, last_child_index=0, ge
   """
   Returns a list of indices from the last child to the second generation
   """
-  if last_child_index in range(2, ((2**spawn_exponent)+2)):
+  if last_child_index in range(1, 2**spawn_exponent):
     return longest_ancestry
   if generation == 1:
     last_child_index = len(heap_array) - 1
