@@ -27,14 +27,14 @@ class PowerOfTwoMaxHeap:
 
 
 # example = PowerOfTwoMaxHeap(1)
-# print(example.insert(8)) #[8]
-# print(example.insert(2)) #[8, 2]
+# print(example.insert(15)) #[8]
+# print(example.insert(8)) #[8, 2]
 # print(example.insert(9)) #[9, 2, 8]
-# print(example.insert(4)) #[9, 4, 8, 2]
-# print(example.insert(15)) #[15, 9, 8, 2, 4]
+# print(example.insert(7)) #[9, 4, 8, 2]
+# print(example.insert(4)) #[15, 9, 8, 2, 4]
 # print(example.insert(3)) #[15, 9, 8, 2, 4, 3]
 # print(example.insert(1)) #[15, 9, 8, 2, 4, 3, 1]
-# print(example.insert(7)) #[15, 9, 8, 7, 4, 3, 1, 2]
+# print(example.insert(2)) #[15, 9, 8, 7, 4, 3, 1, 2]
 # print(example.pop_max())
 # print(example.heap_array)
 
